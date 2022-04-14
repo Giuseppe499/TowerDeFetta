@@ -1,12 +1,48 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scripts/Test.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/IstanziaNemici.gd" type="Script" id=1]
+[ext_resource path="res://Nemico.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 81, 682, 0, 0, 0, 0, 81, 49, 0, 0, 0, 0, 354, 51, 0, 0, 0, 0, 87, 51, 0, 0, 0, 0, 85, 318, 0, 0, 0, 0, 257, 322, 0, 0, 0, 0, 85, 320, 0, 0, 0, 0, 81, 682 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 475, 689, 0, 0, 0, 0, 467, 53, 0, 0, 0, 0, 715, 49, 0, 0, 0, 0, 467, 55, 0, 0, 0, 0, 467, 314, 0, 0, 0, 0, 615, 316, 0, 0, 0, 0, 469, 314, 0, 0, 0, 0, 479, 691, 0, 0, 0, 0, 712, 695, 0, 0, 0, 0, 475, 689 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 806, 693, 0, 0, 0, 0, 787, 47, 0, 0, 0, 0, 856, 55, 0, 0, 0, 0, 933, 112, 0, 0, 0, 0, 967, 259, 0, 0, 0, 0, 967, 354, 0, 0, 0, 0, 945, 483, 0, 0, 0, 0, 918, 581, 0, 0, 0, 0, 850, 676, 0, 0, 0, 0, 806, 693 )
+}
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 552, 225 )
-texture = ExtResource( 2 )
+[node name="F" type="Path2D" parent="."]
+curve = SubResource( 1 )
 script = ExtResource( 1 )
-vel = 10
+nNemici = 40
+scenaNemico = ExtResource( 2 )
+
+[node name="E" type="Path2D" parent="."]
+position = Vector2( -55, -6 )
+curve = SubResource( 2 )
+script = ExtResource( 1 )
+nNemici = 40
+scenaNemico = ExtResource( 2 )
+
+[node name="D" type="Path2D" parent="."]
+position = Vector2( -48, -8 )
+curve = SubResource( 3 )
+script = ExtResource( 1 )
+nNemici = 40
+scenaNemico = ExtResource( 2 )
+
+[node name="E2" type="Path2D" parent="."]
+position = Vector2( 536, -6 )
+curve = SubResource( 2 )
+script = ExtResource( 1 )
+nNemici = 40
+scenaNemico = ExtResource( 2 )
