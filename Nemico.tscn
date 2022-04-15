@@ -5,7 +5,10 @@
 
 [node name="PathFollow2D" type="PathFollow2D"]
 rotate = false
+loop = false
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
+speed = 200
+danno = 10
